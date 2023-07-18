@@ -48,6 +48,16 @@ public class LambdaExpressionDemo {
             System.out.println("Name is " + s);
         };
         DataUtil.names.forEach(method);
+
+        Shape circle2 = (int a, int b) -> {
+            System.out.println("Circle drawn using value " + (a + b));
+        };
+
+
+        FunctionalInterfaceDemo demo = () -> {
+            System.out.println("Circle drawn using value ");
+        };
+
     }
 
     public static void drawShape(Shape shape) {

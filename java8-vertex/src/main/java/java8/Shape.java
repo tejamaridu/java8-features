@@ -1,6 +1,15 @@
 package java8;
 
-public interface Shape {
+@FunctionalInterface
+ interface Shape {
 
     public void draw(int a, int b);
+
+    default void testData() {
+        System.out.println("Test");
+    }
+
+    static void sendData() {
+        System.out.println("Send");
+    }
 }
