@@ -2,6 +2,8 @@ package java8;
 
 import util.DataUtil;
 
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -57,6 +59,18 @@ public class LambdaExpressionDemo {
         FunctionalInterfaceDemo demo = () -> {
             System.out.println("Circle drawn using value ");
         };
+
+        /** One of the usages of the Function type in the standard library is the Map.computeIfAbsent method.
+         This method returns a value from a map by key, but calculates a value if a key is not already present in a map.
+         To calculate a value, it uses the passed Function implementation **/
+        Map<String, Integer> nameMap = new HashMap<>();
+        // nameMap.put("John", 2580); Does not insert a entry if this line uncommented
+        Integer value = nameMap.computeIfAbsent("John", (s) -> {
+            // Do something with return value
+            s = s + "dxjhlkjgdhklghgl";
+            return s.length();
+        });
+        System.out.println(nameMap);
 
     }
 
